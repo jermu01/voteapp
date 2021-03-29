@@ -1,0 +1,51 @@
+<?php session_start(); ?>
+<?php
+if (!isset($_SESSION['logged_in'])){
+  header('Location: index.php');
+  die();
+}
+?>
+
+
+<?php include_once 'layout/top.inc.php'; ?>
+<?php include_once 'layout/nav.inc.php'; ?>
+
+  <div class="container">
+
+  <div id="msg" class="alert alert-dismissible alert-warning d-none">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4 class="alert-heading">Warning!</h4>
+    <p class="mb-0"></a></p>
+  </div>
+
+  <form name="editPoll">
+      <fieldset>
+        <legend>Edit poll</legend>
+        <div class="form-group">
+        <input type="hidden" name="id">
+          <label for="topic">Topic</label>
+          <input name="topic" type="text" class="form-control" placeholder="topic">
+          </div>
+        <div class="form-group">
+          <label for="start">Start</label>
+          <input name="start" type="datetime-local" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="end">End</label>
+          <input name="end" type="datetime-local" class="form-control">
+        </div>
+
+        <h5>Poll options</h5> <button class="btn btn-primary" id="addOption">Add option</button>
+
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary">Save Poll</button>
+      <button class="btn btn-warning" id="deleteLastOption">Delete last option</button>
+    </form>
+  
+</div>
+
+<script src="js/editPoll.js"></script>
+<script src="js/common.js"></script>
+
+<?php include_once 'layout/botto.inc.php'; ?>

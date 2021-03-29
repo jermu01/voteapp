@@ -3,6 +3,12 @@
 
   <div class="container">
 
+  <div id="msg" class="alert alert-dismissible alert-warning d-none">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4 class="alert-heading">Warning!</h4>
+    <p class="mb-0"></a></p>
+  </div>
+
   <form name="register">
       <fieldset>
         <legend>Register</legend>
@@ -25,5 +31,6 @@
 </div>
 
 <script src="js/register.js"></script>
+<script src="js/common.js"></script>
 
 <?php include_once 'layout/botto.inc.php'; ?>
